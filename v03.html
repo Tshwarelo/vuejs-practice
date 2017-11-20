@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <h3>Test vee 03</h3>
+    <div id="app">
+        <p>{{ saySomething() }} - <a v-bind:href="link" target="_blank">MiWay</a> </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                title: 'Some output text2',
+                link: 'http://www.miway.co.za'
+            },
+            methods: {
+                saySomething: function (event) {
+                  return this.title;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
