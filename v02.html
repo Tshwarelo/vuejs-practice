@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <h3>Test vee 01</h3>
+    <div id="app">
+        <p>{{ saySomething() }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                title: 'First app'
+            },
+            methods: {
+                saySomething: function (event) {
+                  return 'Some output text';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
