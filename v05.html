@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .yellow{
+            background-color: lightyellow;
+            width: 65%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3> Test vee 05 </h3>
+        <button v-on:click="increase(3)">Go!</button>
+        <p>{{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates" class="yellow">
+            Coordinates: {{ x }} / {{ y }}
+            - <span  v-on:mousemove.stop="">DEAD SPOT</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                counter:  0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                increase: function (goo){
+                    this.counter += goo;
+                },
+                updateCoordinates: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dead: function (event) {
+                    event.stopPropagation();
+                },
+                alertMe: function () {
+                    alert('Go alert me!');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

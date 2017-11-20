@@ -9,6 +9,8 @@
     <div id="app">
         <h3 v-once>{{ title }}</h3>
         <p>{{ saySomething() }} - <a v-bind:href="link" target="_blank">MiWay</a> </p>
+        <hr>
+        <p v-html="finishedLink"></p>
     </div>
 
     <script>
@@ -16,7 +18,8 @@
             el: '#app',
             data:{
                 title: 'Test vee 04',
-                link: 'http://www.miway.co.za'
+                link: 'http://www.miway.co.za',
+                finishedLink: '<a href="http://www.google.com" target="_blank">Google</a>'
             },
             methods: {
                 saySomething: function (){
